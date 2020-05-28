@@ -1,0 +1,23 @@
+<nav class="navbar navbar-dark bg-dark justify-content-around">
+  <a class="navbar-brand ml-3" routerLink="/" style="font-size:30px">
+    MyCoin
+  </a>
+  <div class="justify-content-center">
+    <button routerLink="/new/transaction/pending" class="btn btn-primary" *ngIf="thereArePendingTransactions()">
+      Pending transactions
+      <span class="badge badge-light">{{blockchain.pendingTransactions.length}}</span>
+    </button>
+    <button routerLink="/new/transaction" class="btn btn-primary ml-2">
+      Create transaction
+    </button>
+    <button routerLink="/wallet/{{publicKey}}" class="btn btn-primary ml-2">
+      My wallet
+    </button>
+  </div>
+</nav>
+<router-outlet></router-outlet>
+
+
+
+
+

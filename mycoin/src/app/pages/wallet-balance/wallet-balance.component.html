@@ -1,0 +1,23 @@
+<div class="container mt-2">
+	<h1>My Wallet</h1>
+	<hr>
+	<p class="text-truncate" style="word-wrap:break-word;width: 50%;">
+		<strong>Address: </strong>
+		{{walletAddress}}
+	</p>
+
+	<p>
+		<strong>Balance: </strong>
+		{{ balance }}
+	</p>
+
+	<hr>
+
+	<h3>History</h3>
+	<p *ngIf="transactions.length === 0">This wallet has made no transactions (yet)</p>
+	<hr>
+	<app-transactions-table
+		[transactions]="transactions"
+		*ngIf="transactions.length > 0"
+	></app-transactions-table>
+</div>
